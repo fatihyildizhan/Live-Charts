@@ -84,10 +84,6 @@
     <Compile Include="SeriesAndValues\SeriesAutoColors.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Core\Core.csproj">
-      <Project>{d447642c-a85f-4ab0-96d9-c66cff91aada}</Project>
-      <Name>Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\WpfView\WpfView.csproj">
       <Project>{4d253423-ae05-47f6-a59d-9162ec0bb1f2}</Project>
       <Name>WpfView</Name>
