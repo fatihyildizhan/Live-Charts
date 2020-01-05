@@ -31,6 +31,14 @@ namespace LiveCharts.Definitions.Charts
     public interface ISeparatorElementView
     {
         /// <summary>
+        /// get left position
+        /// </summary>
+        double Left { get; }
+        /// <summary>
+        /// Get text value
+        /// </summary>
+        string Text { get; }
+        /// <summary>
         /// Gets the model.
         /// </summary>
         /// <value>

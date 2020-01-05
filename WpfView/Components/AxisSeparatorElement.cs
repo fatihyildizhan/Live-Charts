@@ -73,6 +73,16 @@ namespace LiveCharts.Wpf.Components
         }
 
         /// <summary>
+        /// get left position
+        /// </summary>
+        public double Left { get; private set; }
+
+        /// <summary>
+        /// get text value
+        /// </summary>
+        public string Text { get; private set; }
+
+        /// <summary>
         /// Updates the label.
         /// </summary>
         /// <param name="text">The text.</param>
@@ -82,6 +92,7 @@ namespace LiveCharts.Wpf.Components
         public LabelEvaluation UpdateLabel(string text, AxisCore axis, AxisOrientation source)
         {
             TextBlock.Text = text;
+            Text = text;
 
             var formattedText = new FormattedText(
                   TextBlock.Text,
@@ -111,6 +122,7 @@ namespace LiveCharts.Wpf.Components
             chart.RemoveFromView(TextBlock);
             chart.RemoveFromView(Line);
             TextBlock = null;
+            Text = "";
             Line = null;
         }
 
@@ -146,6 +158,8 @@ namespace LiveCharts.Wpf.Components
 
                 Canvas.SetLeft(TextBlock, toLabel);
                 Canvas.SetTop(TextBlock, tab);
+
+                Left = toLabel;
             }
         }
 
@@ -204,6 +218,8 @@ namespace LiveCharts.Wpf.Components
                     new DoubleAnimation(toLabel, chart.View.AnimationsSpeed));
                 TextBlock.BeginAnimation(Canvas.TopProperty,
                     new DoubleAnimation(tab, chart.View.AnimationsSpeed));
+
+                Left = toLabel;
             }
 
         }
